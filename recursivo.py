@@ -1,4 +1,4 @@
-
+from timeit import default_timer
 def fib(n):
     if n == 0:
         return 0
@@ -9,8 +9,8 @@ def fib(n):
 
 
 inicio = default_timer()
-fib(34)
+fib(22)
 fin = default_timer()
 print(fin - inicio)
 
-print (fib(34))
+print (fib(22))
