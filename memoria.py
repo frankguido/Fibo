@@ -1,11 +1,18 @@
+#importa la libreria para poder calcular el tiempo de ejecucion
 from timeit import default_timer
+
+#rango global para el uso de memoria 
 dp = [-1 for i in range(5000)]
- 
+
+#fibonacci usando memoria
 def fib(n):
     if (n <= 1):
         return n;
+      
+    #uso de la funcion global
     global dp;
-
+  
+    #dos primeros fibonacci
     first = 0;
     second = 0;
  
@@ -19,10 +26,10 @@ def fib(n):
         second = fib(n - 2);
     dp[n] = first + second;
  
-    # Memorizacion
+    # Uso de memorizacion
     return dp[n] ;
  
-
+#tiempo de ejecucion y resultado de fibonacci
 if __name__ == '__main__':
     n = 33;
     inicio = default_timer()
@@ -30,6 +37,4 @@ if __name__ == '__main__':
     fin = default_timer()
     print(fin - inicio)
     print(fib(33))
-
-
 
