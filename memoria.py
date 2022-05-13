@@ -1,11 +1,27 @@
-nums = {}
-def fib1(n):
-    if n <= 2:
-        return 1
-    if n in nums:
-        return nums[n]
-    else: 
-      num = fib1(n-1) + fib1(n-2)
-      nums[n] = num
-      return num
+dp = [-1 for i in range(5000)]
+ 
+def fib(n):
+    if (n <= 1):
+        return n;
+    global dp;
 
+    first = 0;
+    second = 0;
+ 
+    if (dp[n - 1] != -1):
+        first = dp[n - 1];
+    else:
+        first = fib(n - 1);
+    if (dp[n - 2] != -1):
+        second = dp[n - 2];
+    else:
+        second = fib(n - 2);
+    dp[n] = first + second;
+ 
+    # Memorizacion
+    return dp[n] ;
+ 
+
+if __name__ == '__main__':
+    n = 33;
+    print(fib(n));
