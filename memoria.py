@@ -1,3 +1,4 @@
+from timeit import default_timer
 dp = [-1 for i in range(5000)]
  
 def fib(n):
@@ -24,4 +25,11 @@ def fib(n):
 
 if __name__ == '__main__':
     n = 33;
-    print(fib(n));
+    inicio = default_timer()
+    fib(33)
+    fin = default_timer()
+    print(fin - inicio)
+    print(fib(33))
+
+
+
